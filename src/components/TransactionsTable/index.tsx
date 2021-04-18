@@ -22,6 +22,7 @@ export function TransactionsTable() {
             <tr key="transaction.id">
               <td>{transaction.title}</td>
               <td className={transaction.type}>
+                {transaction.type === "withdraw" && "-"}
                 {formattedCurrency(transaction.amount)}
               </td>
               <td>{transaction.category}</td>
