@@ -15,7 +15,6 @@ function App() {
 
   function handleOpenNewTransactionModal() {
     setNewTransactionModalOpen(true);
-    console.log("modal is open");
   }
 
   function handleCloseNewTransactionModal() {
