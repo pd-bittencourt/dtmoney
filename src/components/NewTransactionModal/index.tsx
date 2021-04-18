@@ -1,16 +1,12 @@
 import { FormEvent, useState } from "react";
 import Modal from "react-modal";
 import { useTransactions } from "../../hooks/useTransactions";
+import { NewTransactionModalProps } from "../../types/types";
 
 import { Container, RadioBox, TransactionsTypeContainer } from "./styles";
 import closeImg from "../../assets/close.svg";
 import incomeImg from "../../assets/income.svg";
 import outcomeImg from "../../assets/outcome.svg";
-
-interface NewTransactionModalProps {
-  isOpen: boolean;
-  onRequestClose: () => void;
-}
 
 export function NewTransactionModal({
   isOpen,

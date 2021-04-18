@@ -1,32 +1,12 @@
-import {
-  createContext,
-  useEffect,
-  useState,
-  ReactNode,
-  useContext,
-} from "react";
+import { createContext, useEffect, useState, useContext } from "react";
+
 import { api } from "../services/api";
-
-interface Transaction {
-  id: number;
-  title: string;
-  amount: number;
-  type: string;
-  category: string;
-  createdAt: string;
-}
-
-interface TransactionsProviderProps {
-  children: ReactNode;
-}
-
-interface TransactionsContextData {
-  transactions: Transaction[];
-  createTransaction: (transaction: TransactionInput) => Promise<void>;
-}
-
-// POST TRANSACTION INTERFACE (pode usar Pick também)
-type TransactionInput = Omit<Transaction, "id" | "createdAt">;
+import {
+  Transaction,
+  TransactionInput,
+  TransactionsContextData,
+  TransactionsProviderProps,
+} from "../types/types";
 
 const TransactionsContext = createContext<TransactionsContextData>(
   {} as TransactionsContextData
